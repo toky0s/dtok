@@ -1,0 +1,106 @@
+{% extends 'home_template.html' %}
+{% load static%}
+
+
+{% block head %}
+<title>Dtok</title>
+<link rel="stylesheet" href="{% static 'home/css/home/index.css'%}">
+{% endblock %}
+
+
+{% block main %}
+<div class="container">
+
+  <div class="row">
+    <div class="col" style="text-align: center;">
+      <img src="{% static 'home/images/banner.jpg'%}" class="img-fluid" alt="banner">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="wrap_content">
+          <div class="main_header">
+            <p class="section_header">Thông báo mới nhất</p>
+          </div>
+
+          <table class="table-warning table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Thông báo</th>
+                <th scope="col">Ngày tạo</th>
+                <th scope="col">Người viết</th>
+                <th scope="col">Lượt xem</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              {% for article in information_articles %}
+              <tr>
+                <td>{{ article.title }}</td>
+                <td>{{ article.create_date | date:"D d M Y" }}</td>
+                <td>{{ article.author.display_name}}</td>
+                <td>{{ article.view }}</td>
+
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="wrap_content">
+          <div class="main_header">
+            <p class="section_header">Bài viết mới nhất</p>
+          </div>
+
+          <table class="table-primary table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Tên bài viết</th>
+                <th scope="col">Ngày viết</th>
+                <th scope="col">Thẻ</th>
+                <th scope="col">Người viết</th>
+                <th scope="col">Lượt xem</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              {% for article in articles %}
+              <tr>
+                <td><a href="{% url 'blog:detail' article.url_slug %}">{{ article.title }}</a></td>
+                <td>{{ article.create_date | date:"D d M Y"  }}</td>
+                <td>{{ article.tag.display_name }}</td>
+                <td>{{ article.author.display_name}}</td>
+                <td>{{ article.view }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <div class="col-md-3">
+        <div class="wrap_content">
+          <div class="main_header">
+            <p class="h1">Thẻ thịnh hành</p>
+          </div>
+          {% for tag in tags %}
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                {{tag.full_name}}
+              </h5>
+              <h6 class="card-subtitle text-muted">
+                {{tag.display_name}} | Trong 100k bài viết
+              </h6>
+            </div>
+          </div>
+          {% endfor%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}

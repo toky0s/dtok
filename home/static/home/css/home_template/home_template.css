@@ -1,0 +1,37 @@
+body {
+  background-color: #f5f6fa;
+}
+
+footer {
+  margin-top: 20px;
+  padding: 50px;
+}
+
+footer .brand_info {
+  padding-top: 50px;
+}
+
+footer .brand_info .brand_policy .social_list {
+  float: right;
+  position: relative;
+  top: 1px;
+}
+
+footer .brand_info .brand_policy .social_list li {
+  float: left;
+  list-style: none;
+  padding-left: 40px;
+}
+
+footer .brand_info .brand_policy .social_list li a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+footer .brand_info .brand img {
+  height: 50px;
+  position: relative;
+  bottom: 20px;
+}
+/*# sourceMappingURL=home_template.css.map */

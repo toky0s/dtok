@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'home/css/login_view/login.css'%}" />
+    <link rel="stylesheet" href="{% static 'home/css/register/register.css'%}" />
+    <title>Đăng ký</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="flex_container">
+            <div class="wrap">
+                <div class="form">
+                    <h1>Đăng ký</h1>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="fieldWrapper">
+                            {{ register_form.email.errors }}
+                            {{ register_form.email.label_tag }}
+                            {{ register_form.email }}
+                        </div>
+                        <div class="fieldWrapper">
+                            {{ register_form.password.errors }}
+                            {{ register_form.password.label_tag }}
+                            {{ register_form.password }}
+                        </div>
+                        <div class="fieldWrapper">
+                            {{ register_form.repassword.errors }}
+                            {{ register_form.repassword.label_tag }}
+                            {{ register_form.repassword }}
+                        </div>
+                        <div class="fieldWrapper">
+                            {{ register_form.phone_number.errors }}
+                            {{ register_form.phone_number.label_tag }}
+                            {{ register_form.phone_number }}
+                        </div>
+                        <div class="fieldWrapper">
+                            {{ register_form.display_name.errors }}
+                            {{ register_form.display_name.label_tag }}
+                            {{ register_form.display_name }}
+                        </div>
+                        <input type="submit" value="Đăng ký" class="submit_button">
+                    </form>
+
+                    <div class="register">
+                        <p>Đã có tài khoản? <a href="{% url 'home:login' %}">Đăng nhập</a></p>
+                    </div>
+                </div>
+
+                <div class="about">
+                    <div class="team_image">
+                        <img src="{% static 'home/images/brand.png'%}">
+                    </div>
+                    <div class="welcome">
+                        <h3>Điều khoản đăng ký</h3>
+                    </div>
+                    <div class="rule_container">
+                        <ul>
+                            <li>Mật khẩu có độ dài từ 8-30 ký tự bao gồm các chữ cái in hoa, in thường, số, và các ký tự đặc biệt.</li>
+                            <li>Số điện thoại là một dãy 10 số.</li>
+                            <li>Tên hiển thị là tên sẽ được nhìn thấy bởi mọi người khi bạn thực hiện bình luận hoặc viết bài.</li>
+                            <li>Tên đầy đủ là tên của bạn, bạn có thể lấy một cái tên giả, nhưng tiếng Việt là được.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

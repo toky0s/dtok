@@ -1,0 +1,30 @@
+li {
+  list-style: none;
+}
+
+.fieldWrapper {
+  margin-top: 7px;
+}
+
+.fieldWrapper label {
+  display: block;
+  margin-bottom: 0px;
+}
+
+.fieldWrapper input {
+  width: 240px;
+}
+
+.submit_button {
+  margin-top: 10px;
+}
+
+.rule_container {
+  color: white;
+  width: 280px;
+}
+
+.rule_container ul {
+  margin: 0 auto;
+}
+/*# sourceMappingURL=register.css.map */

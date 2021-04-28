@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.detail_container {
+    padding-bottom: 10px;
+}
+
+.wrap {
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: min-content;
+}
+
+.wrap_detail {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    .header_info {
+        min-height: min-content;
+        border-bottom: 1px solid #000;
+        .article_title {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+    }
+    .wrap_content {
+        padding: 10px;
+        .content_container {
+            overflow-y: auto;
+            max-height: 70vh;
+            min-height: min-content;
+        }
+    }
+}
+
+$background_color_comment: #fafafd;
+.comment_section {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    .comment_header {
+        p {
+            font-size: large;
+            font-weight: bold;
+        }
+    }
+    .comment_container {
+        overflow-y: scroll;
+        p {
+            padding: 0;
+            margin: 0;
+        }
+        .comment_wrap {
+            display: flex;
+            flex-direction: column;
+            .comment {
+                width: 95%;
+                padding: 10px;
+                border-radius: 20px;
+                background-color: #F2F3F5;
+                .card_title {
+                    font-weight: bold;
+                    font-size: small;
+                }
+                .create_time {
+                    font-size: small;
+                }
+                .comment_content {
+                    font-size: smaller;
+                }
+            }
+            .comment_functions {
+                display: flex;
+                flex-direction: row;
+                padding: 0 0 0 10px;
+                .function_wrap {
+                    padding-left: 5px;
+                    a {
+                        font-size: small;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    .comment_form {
+        padding-top: 20px;
+        .comment_text {
+            width: 100%;
+            font-size: smaller;
+            padding: 10px 15px 10px 15px;
+            border: inherit;
+            background-color: $background_color_comment;
+            border-radius: 20px;
+            &:focus {
+                outline: none;
+            }
+        }
+        .submit_button {
+            display: inline;
+            height: 1px;
+            visibility: hidden;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+li {
+    list-style: none;
+}
+
+.fieldWrapper {
+    margin-top: 7px;
+    label {
+        display: block;
+        margin-bottom: 0px;
+    }
+    input {
+        width: 240px;
+    }
+}
+
+.submit_button {
+    margin-top: 10px;
+}
+
+.rule_container {
+    color: white;
+    width: 280px;
+    ul {
+        margin: 0 auto;
+    }
+}

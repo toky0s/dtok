@@ -1,0 +1,160 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main {
+  height: 100vh;
+  background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+}
+
+.flex_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex_container .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-radius: 8px;
+  margin: 60px auto;
+}
+
+.flex_container .wrap .form {
+  background-color: white;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 40px 60px;
+}
+
+.flex_container .wrap .form .field {
+  margin-bottom: 20px;
+}
+
+.flex_container .wrap .form .field .field_label {
+  margin-bottom: 10px;
+}
+
+.flex_container .wrap .form .field .field_input input {
+  height: 30px;
+  width: 240px;
+}
+
+.flex_container .wrap .form .submit_button {
+  width: 240px;
+  height: 40px;
+  border: inherit;
+  color: white;
+  background: #ff416c;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#ff416c), to(#ff4b2b));
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+.flex_container .wrap .form .forgot_pass {
+  display: block;
+  text-align: center;
+  margin-top: 17px;
+}
+
+.flex_container .wrap .form .forgot_pass:hover {
+  text-decoration: none;
+}
+
+.flex_container .wrap .form .other_social p {
+  text-align: center;
+  color: #c5c0b8;
+}
+
+.flex_container .wrap .form .other_social .social_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex_container .wrap .form .other_social .social_container a {
+  color: white;
+  text-align: center;
+  padding: 10px 30px;
+  display: inline-block;
+}
+
+.flex_container .wrap .form .other_social .social_container a:hover {
+  text-decoration: none;
+}
+
+.flex_container .wrap .form .other_social .social_container #google {
+  background-color: #db4437;
+}
+
+.flex_container .wrap .form .other_social .social_container #facebook {
+  background-color: #4267b2;
+  margin-left: 10px;
+}
+
+.flex_container .wrap .form .register p {
+  margin-top: 10px;
+  text-align: center;
+  color: #b8b9bb;
+}
+
+.flex_container .wrap .form .register p a {
+  color: red;
+}
+
+.flex_container .wrap .about {
+  padding: 40px 60px;
+  background-color: #ff0041;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex_container .wrap .about .team_image {
+  text-align: center;
+}
+
+.flex_container .wrap .about .team_image img {
+  height: 150px;
+  width: auto;
+}
+
+.flex_container .wrap .about .welcome {
+  color: white;
+}
+/*# sourceMappingURL=login.css.map */

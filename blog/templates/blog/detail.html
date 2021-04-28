@@ -1,0 +1,84 @@
+{% extends 'home_template.html' %}
+{% load static %}
+
+{% block head%}
+<title>Dtok - {{ article.title }}</title>
+<link rel="stylesheet" href="{% static 'blog/css/detail/detail.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="detail_container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="wrap">
+          <div class="wrap_detail">
+            <div class="header_info">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-12 col-md-9">
+                    <p class="article_title">{{ article.title }}</p>
+                    <p>{{ article.author.display_name }}</p>
+                  </div>
+                  <div class="col-sm-12 col-md-3">
+                    <p>{{ article.create_date | date:"D d M Y" }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="wrap_content">
+              <div class="content_container">
+                  {{ article.content | safe }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="wrap">
+          <div class="comment_section">
+            <div class="comment_header">
+              <p>Bình luận</p>
+            </div>
+            <div class="comment_container">
+              {% for comment in article.get_all_comment %}
+              <div class="comment_wrap">
+                <div class="comment">
+                  <p class="card_title">
+                    {{comment.author.display_name}}
+                  </p>
+                  <p class="create_time">
+                    {{comment.create_date}}
+                  </p>
+                  <p class="comment_content">
+                    {{comment.content}}
+                  </p>
+                </div>
+                <div class="comment_functions">
+                  <div class="function_wrap">
+                    <a href="">Xoá</a>
+                  </div>
+                  <div class="function_wrap">
+                    <a href="">Sửa</a>
+                  </div>
+                  <div class="function_wrap">
+                    <a href="">Xoá</a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            <div class="comment_form">
+              <form method="POST" autocomplete="off">
+                {% csrf_token %}
+                {{ comment_form.content }}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
