@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from django.http.response import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.shortcuts import get_object_or_404, HttpResponseRedirect
 
 from .forms import CommentForm
@@ -28,5 +29,13 @@ def detail(request, slug):
     return render(request, 'blog/detail.html', context)
 
 @login_required
-def delete_comment(request, comment_id):
-    pass
+def comment_delete(request):
+    id = request.POST['comment_id']
+    pk = request.POST['blogs_id']
+    if request.method == 'POST':
+        comment = get_object_or_404(Comment, id=id, pk=pk)
+        try:
+            comment.delete()
+        except:
+            pass
+    return redirect('get_posts')

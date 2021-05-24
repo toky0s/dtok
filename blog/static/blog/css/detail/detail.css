@@ -92,6 +92,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 5px;
 }
 
 .comment_section .comment_container .comment_wrap .comment {
@@ -122,16 +123,17 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding: 0 0 0 10px;
-}
-
-.comment_section .comment_container .comment_wrap .comment_functions .function_wrap {
-  padding-left: 5px;
+  padding: 0 0 0 15px;
 }
 
 .comment_section .comment_container .comment_wrap .comment_functions .function_wrap a {
   font-size: small;
   font-weight: bold;
+}
+
+.comment_section .comment_container .comment_wrap .comment_functions .break_dot {
+  padding: 0 5px 0 5px;
+  font-size: small;
 }
 
 .comment_section .comment_form {

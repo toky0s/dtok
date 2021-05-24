@@ -3,9 +3,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import get_list_or_404
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from blog.models import Tag, BlogArticle
 from .forms import RegisterForm
 from .models import InformationArticle
+from . import views
 
 # Create your views here.
 
@@ -26,10 +28,11 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reversed('home:register_success'))
+            return HttpResponseRedirect(reverse('home:register_success'))
     return render(request, 'registration/register.html', context={'register_form':form})
 
 def register_success(request):
-    return HttpResponse("Đăng ký thành công <a href=\"{% url 'index' %}\"></a>")
+    return HttpResponse("Đăng ký thành công <a href=\"/\">Về trang chủ</a>")
+
 
 

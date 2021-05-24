@@ -57,6 +57,10 @@
                 <li><a class="dropdown-item" href="{% url 'home:logout' %}">Đăng xuất</a></li>
               </ul>
             </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home:login' %}">Đăng nhập</a>
+            </li>
             {% endif %}
           </ul>
           <form class="d-flex">

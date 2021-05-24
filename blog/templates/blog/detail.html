@@ -54,17 +54,22 @@
                     {{comment.content}}
                   </p>
                 </div>
+                {% if user.is_authenticated and comment.author.id == user.id %}
                 <div class="comment_functions">
                   <div class="function_wrap">
-                    <a href="">Xoá</a>
+                    <form action="{% url 'comment_delete' %}" method="POST">
+                      {% csrf_token %}
+                      <input type="hidden" name="comment_id" value="{{ comment.id }}"/>
+                      <input type="hidden" name="blogs_id" value="{{ article.id }}"/>
+                      <a>Xoá</a>
+                    </form>
                   </div>
+                  <div class="break_dot"><span>-</span></div>
                   <div class="function_wrap">
                     <a href="">Sửa</a>
                   </div>
-                  <div class="function_wrap">
-                    <a href="">Xoá</a>
-                  </div>
                 </div>
+                {% endif %}
               </div>
               {% endfor %}
             </div>
